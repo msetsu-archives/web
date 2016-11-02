@@ -1,57 +1,5 @@
 $ ->
 
-  screenHeight = parseInt window.screen.availHeight, 10
-  screenWidth = parseInt window.screen.availWidth, 10
-  spWidth = 576
-  navHeight = 290
-
-  $('#globalNav').css
-    marginTop: (screenHeight - navHeight) + 'px'
-
-  copyJapaneseTop = parseInt((screenHeight - navHeight) / 4, 10)
-  $('#copyJapanese').css
-    top: copyJapaneseTop + 'px'
-    left: '50%'
-    marginLeft: '-490px'
-
-  copyJapaneseHeight = $('#copyJapanese').height()
-  copyMargin = 60
-  copyEnglishHeight = copyJapaneseTop + parseInt(copyJapaneseHeight, 10)
-  $('#copyEnglish').css
-    top: copyEnglishHeight + copyMargin + 'px'
-    left: '50%'
-    marginLeft: '-320px'
-
-  # スマホサイズ
-  if screenWidth <= spWidth
-    $('#copyJapanese').css
-      top: copyJapaneseTop * 2 + 'px'
-      left: '60%'
-      marginLeft: '-' + parseInt(screenWidth / 2, 10) + 'px'
-      width: '80%'
-
-    $('#copyEnglish').css
-      top: copyEnglishHeight + 'px'
-      left: '70%'
-      marginLeft: '-' + parseInt(screenWidth / 2, 10) + 'px'
-      width: '60%'
-
-    navMargin = 50
-    $('#globalNav').css
-      height: (screenWidth / 4 + navMargin) + 'px'
-    $('.g-nav-list', '#globalNav').css
-      height: (screenWidth / 4) + 'px'
-    $('li', '#globalNav').css
-      lineHeight: (screenWidth / 4) + 'px'
-
-    $('.sp-view').each ->
-      $this = $(@)
-      fontSize = parseInt($this.css('font-size'), 10) / parseInt(1200 / screenWidth, 10)
-      $this.css
-        maxWidth: '80%'
-        fontSize: fontSize + 'px'
-        letterSpacing: '0.2em'
-
   blur = ->
     $('.person.active').removeClass 'active'
     $('.people').removeClass 'focus'
@@ -83,16 +31,13 @@ $ ->
   itzzoom()
 
   preinit = ->
-    h = $(window).height()
-    $('#wrap').css 'opacity', 0
-    $('#loader-bg ,#loader').height(h).css 'display', 'block'
+    $('#loader-bg').css 'display', 'block'
 
   inited = false
   init = ->
     return if inited
     $('#loader-bg').delay(900).fadeOut 800
     $('#loader').delay(600).fadeOut 300
-    $('#wrap').animate({opacity: 1})
 
   # 初期化
   preinit()
