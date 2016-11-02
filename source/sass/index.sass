@@ -1,0 +1,387 @@
+body
+  margin: 0
+  padding: 0
+  /*  IE8以下の代替の背景画像  */
+  background: url(../image/bg.png) #333
+  background-attachment: fixed
+  background-size: cover
+
+.bg-white
+  background: white
+
+header
+  margin: 0
+  padding: 0
+  height: 50px
+  background-color: #e6e6ea
+
+#mainVisual
+  .copy
+    position: absolute
+    top: 0px
+    left: 0px
+  .copy-jp
+    max-width: 980px
+  .copy-en
+    max-width: 640px
+  .g-nav
+    height: 250px
+    background-color: white
+  .g-nav-list
+    height: 150px
+    background-color: #FF4736
+  .g-nav-btn
+    border-left: 4px solid #FF0012
+    &:last-child
+      border-right: 4px solid #FF0012
+
+#companyCEO
+  h2
+    height: 120px
+    line-height: 120px
+    font-size: 54px
+    vertical-align: middle
+    font-weight: normal
+    color: white
+    text-align: center
+    margin: 0 auto
+    letter-spacing: 0.5em
+  .img-ceo
+    max-width: 100%
+  .company-story
+    line-height: 1.65em
+  .ceo-name
+    padding: 10px 0
+  .ceo-name-english
+    font-size: 50%
+    letter-spacing: 0.4em
+  .ceo-profile
+    font-size: 90%
+    line-height: 1.7em
+  .caption-ceo
+    padding-top: 20px
+    padding-left: 5px
+    padding-right: 5px
+
+#companyMission
+  h2
+    height: 120px
+    line-height: 120px
+    font-size: 54px
+    vertical-align: middle
+    font-weight: normal
+    color: white
+    text-align: center
+    margin: 0 auto
+    letter-spacing: 0.5em
+  .mission-1, .mission-2
+    line-height: 1.7em
+
+#companyMember
+  h2
+    height: 120px
+    line-height: 120px
+    font-size: 54px
+    vertical-align: middle
+    font-weight: normal
+    color: white
+    text-align: center
+    margin: 0 auto
+    letter-spacing: 0.5em
+
+#companyData
+  padding-top: 40px
+  padding-bottom: 40px
+  background-color: #e6e6ea
+  h2
+    height: 80px
+    line-height: 80px
+    font-size: 54px
+    vertical-align: middle
+    font-weight: normal
+    color: #f33
+    text-align: center
+    margin: 0 auto
+    letter-spacing: 0.3em
+  .rbb
+    margin: 0 auto
+    width: 160px
+    border-bottom: 2px solid #f33
+  .icon-sns
+    min-width: 100%
+    &:hover
+      opacity: 0.6
+      cursor: pointer
+  .map
+    max-width: 100%
+
+#videoBackground
+  /*  動画を背景に設定するスタイルシート  */
+  position: fixed
+  right: 0
+  bottom: 0
+  min-width: 100%
+  min-height: 100%
+  width: auto
+  height: auto
+  z-index: -100
+  
+/* メンバー */
+.people 
+  width: 100%
+  height: 978px
+  overflow: hidden
+  margin: 0
+  padding: 0
+  display: block
+  position: relative
+  background: white
+
+
+.people.focus .person.active .detail 
+  display: block
+
+
+.person 
+  position: absolute
+  display: block
+  width: 140px
+  overflow: visible
+  background: transparent
+
+
+.person a.people-anchor 
+  text-indent: 100%
+  overflow: hidden
+  white-space: nowrap
+  width: 140px
+  height: 580px
+  display: block
+
+
+.person img 
+  position: absolute
+  top: 0
+  left: 0
+  pointer-events: none
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+
+.person img.back 
+  z-index: 0
+
+
+.person img.front 
+  z-index: 10
+  visibility: visible
+  opacity: 1
+
+
+.person img.back 
+  display: none
+
+
+.focus .person img.back 
+  display: block
+
+
+.focus .person img.front 
+  visibility: hidden
+  opacity: 0
+
+
+.focus .person.active img.front 
+  visibility: visible
+  opacity: 1
+  -webkit-transition: opacity 1000ms cubic-bezier(0.165, 0.84, 0.44, 1)
+  transition:         opacity 1000ms cubic-bezier(0.165, 0.84, 0.44, 1)
+
+
+.person .detail 
+  position: absolute
+  display: none
+  pointer-events: none
+  top: 0
+  width: 400px
+  height: 100%
+  padding: 20px
+  color: #FF4736
+
+
+.person .detail.left-pane 
+  top: 0
+  right: 85%
+  text-align: right
+
+
+.person .detail.right-pane 
+  top: 0
+  left: 85%
+
+
+.person .detail h1 
+  font-size: 28px
+  font-weight: normal
+
+
+.person .detail ul.acc 
+  margin: 0
+  padding: 0.5em 0 0 0
+  list-style: none
+
+
+.person .detail ul.acc li 
+  display: inline-block
+
+
+.person .detail ul.acc .acc-icon + .acc-icon 
+  margin-left: 0.3rem
+
+
+.person .detail ul.acc .acc-icon a 
+  pointer-events: initial
+  display: block
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  width: 30px
+  height: 30px
+  background-size: 30px
+
+
+.person .detail ul.acc .acc-fb a 
+  background: url(../image/4-1_facebook.svg)
+
+
+.person .detail ul.acc .acc-tw a 
+  background: url(../image/4-2_twitter.svg)
+
+
+#pos1 
+  z-index: 41
+  top: calc(50% - 580px/2)
+  left: calc(50% - 140px*3.5 + 15px)
+
+
+#pos1 img 
+  height: 541px
+  margin-left: -185px
+
+
+#pos1 .detail 
+  margin-top: 120px
+
+
+#pos2 
+  z-index: 40
+  top: calc(50% - 580px/2 + 50px)
+  left: calc(50% - 140px*2.5)
+
+
+#pos2 img 
+  height: 552px
+  margin-left: -146px
+
+
+#pos2 .detail 
+  margin-top: 90px
+
+
+#pos3 
+  z-index: 13
+  top: 42px
+  left: calc(50% - 140px*1.5)
+
+
+#pos3 img 
+  height: 582px
+  margin-left: -162px
+
+
+#pos3 .detail 
+  margin-top: 90px
+
+
+#pos4 
+  z-index: 12
+  left: calc(50%)
+
+
+#pos4 img 
+  height: 583px
+  margin-left: -189px
+
+
+#pos4 .detail 
+  margin-top: 30px
+
+
+#pos5 
+  z-index: 10
+  top: 58px
+  right: calc(50% - 140px*2.4)
+
+
+#pos5.active 
+  z-index: 20
+
+
+#pos5 img 
+  height: 547px
+  margin-left: -102px
+
+
+#pos5 .detail 
+  margin-top: 40px
+
+
+#pos6 
+  z-index: 13
+  right: calc(50% - 140px*3.5)
+  top: calc(50% - 580px/2 - 100px)
+
+
+#pos6 img 
+  height: 590px
+  margin-left: -149px
+
+
+#pos6 .detail 
+  margin-top: 60px
+
+
+#pos7 
+  z-index: 30
+  top: 280px
+  right: calc(50% - 140px*1.4)
+
+
+#pos7 img 
+  height: 581px
+  margin-left: -128px
+
+
+#pos7 .detail 
+  margin-top: 60px
+  margin-left: 45px
+
+
+#pos8 
+  z-index: 31
+  top: 309px
+  left: calc(50% - 140px*0.8)
+
+
+#pos8 img 
+  height: 542px
+  margin-left: -135px
+
+
+#pos8 .detail 
+  margin-top: 60px
+  margin-left: 10px
+  
