@@ -5,9 +5,13 @@ $ ->
   spWidth = 576
   navHeight = 290
 
+  if screenWidth > spWidth
+    $('.video').append('''
+  <video id="videoBackground" autoplay="" loop="" poster="asset/image/bg.jpg" muted=""><source src="asset/image/bg.mp4" type="video/mp4"></video>
+''')
+
   # スマホサイズ
   if screenWidth <= spWidth
-    $('#videoBackground').remove()
     navMargin = 50
     $('#globalNav').css
       height: (screenWidth / 4 + navMargin) + 'px'
