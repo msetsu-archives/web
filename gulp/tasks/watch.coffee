@@ -12,6 +12,3 @@ gulp.task 'watch', ->
 
   # Sassの監視
   gulp.watch 'source/sass/**', ['compass']
-
-  # 画像の監視
-  gulp.watch 'source/image/**', ['imagemin']
