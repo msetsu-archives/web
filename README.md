@@ -11,5 +11,5 @@ develop
 
     $ bundle install
     $ npm install
-    $ gulp
+    $ gulp server
     # => http://localhost:8080
