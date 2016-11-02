@@ -1,5 +1,27 @@
 $ ->
 
+  screenHeight = parseInt window.screen.availHeight, 10
+  screenWidth = parseInt window.screen.availWidth, 10
+  spWidth = 576
+  navHeight = 290
+
+  # スマホサイズ
+  if screenWidth <= spWidth
+    navMargin = 50
+    $('#globalNav').css
+      height: (screenWidth / 4 + navMargin) + 'px'
+    $('.g-nav-list', '#globalNav').css
+      height: (screenWidth / 4) + 'px'
+    $('li', '#globalNav').css
+      lineHeight: (screenWidth / 4) + 'px'
+    $('.sp-view').each ->
+      $this = $(@)
+      fontSize = parseInt($this.css('font-size'), 10) / parseInt(1200 / screenWidth, 10)
+      $this.css
+        maxWidth: '80%'
+        fontSize: fontSize + 'px'
+        letterSpacing: '0.2em'
+
   blur = ->
     $('.person.active').removeClass 'active'
     $('.people').removeClass 'focus'
