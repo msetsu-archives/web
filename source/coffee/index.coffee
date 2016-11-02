@@ -7,6 +7,7 @@ $ ->
 
   # スマホサイズ
   if screenWidth <= spWidth
+    $('#videoBackground').remove()
     navMargin = 50
     $('#globalNav').css
       height: (screenWidth / 4 + navMargin) + 'px'
