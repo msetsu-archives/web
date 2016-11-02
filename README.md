@@ -9,7 +9,6 @@ https://msetsu.com
 develop
 ----------
 
-    $ bundle install
     $ npm install
     $ gulp server
     # => http://localhost:8080
