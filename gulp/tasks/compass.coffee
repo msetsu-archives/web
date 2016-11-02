@@ -1,5 +1,5 @@
 gulp = require 'gulp'
-compass = require 'gulp-compass'
+sass = require 'gulp-sass'
 minifyCSS = require 'gulp-minify-css'
 handleErrors = require '../utils/handle_errors'
 
@@ -13,7 +13,9 @@ gulp.task 'compass', ->
 
   gulp
   .src ['source/sass/**/*.sass']
-  .pipe compass(compassOption)
+  .pipe sass({
+    includePaths: ['./node_modules']
+  })
   .on 'error', handleErrors
   .pipe minifyCSS()
   .pipe gulp.dest('public/asset/company/')
