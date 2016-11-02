@@ -82,24 +82,22 @@ $ ->
   $(window).on 'resize', itzzoom
   itzzoom()
 
-  # LOADER
-  stopload = ->
-    $('#wrap').animate({opacity: 1})
+  preinit = ->
+    h = $(window).height()
+    $('#wrap').css 'opacity', 0
+    $('#loader-bg ,#loader').height(h).css 'display', 'block'
+
+  inited = false
+  init = ->
+    return if inited
     $('#loader-bg').delay(900).fadeOut 800
     $('#loader').delay(600).fadeOut 300
+    $('#wrap').animate({opacity: 1})
 
-  h = $(window).height()
-  $('#wrap').css 'opacity', 0
-  $('#loader-bg ,#loader').height(h).css 'display', 'block'
-
+  # 初期化
+  preinit()
+  
   # 全ての読み込みが完了したら実行
-  $(window).on 'load', ->
-    init()
-    $('#loader-bg').delay(900).fadeOut 800
-    $('#loader').delay(600).fadeOut 300
-    $('#wrap').animate({opacity: 1})
-
-  setTimeout ->
-    stopload()
-    init()
-  , 4000
+  # OR loadきてなくても4秒後に実行
+  $(window).on 'load', init
+  setTimeout init, 4000
