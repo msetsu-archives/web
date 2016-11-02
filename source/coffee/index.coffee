@@ -96,8 +96,11 @@ $ ->
 
   # 初期化
   preinit()
-  
+
   # 全ての読み込みが完了したら実行
   # OR loadきてなくても4秒後に実行
-  $(window).on 'load', init
-  setTimeout init, 4000
+  if document.readyState == 'complete'
+    init()
+  else
+    $(window).on 'load', init
+    setTimeout init, 4000
