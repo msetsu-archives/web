@@ -6,10 +6,26 @@ $pc: "(min-width: 576px)"
 body
   margin: 0
   padding: 0
-  /*  IE8以下の代替の背景画像  */
-  background: url(../image/bg.jpg) #333
-  background-attachment: fixed
+  background: #333
+
+.video
+  /*  動画を背景に設定するスタイルシート  */
+  position: fixed
+  top: 0
+  right: 0
+  z-index: -100
+  min-width: 100%
+  min-height: 100%
+  width: auto
+  height: 100vh
+  background-image: url(../image/bg.jpg)
+  background-position: center
   background-size: cover
+
+#videoBackground
+  width: auto
+  height: 100vh
+
 
 .bg-white
   background: white
@@ -182,20 +198,3 @@ $large-font-size-mobile: 100vw / (1200 / 54)
       cursor: pointer
   .map
     max-width: 100%
-
-.video
-  /*  動画を背景に設定するスタイルシート  */
-  position: fixed
-  top: 0
-  right: 0
-  z-index: -100
-  min-width: 100%
-  min-height: 100%
-  width: auto
-  height: 100vh
-  background-image: url(../image/bg.jpg)
-  background-position: center
-
-  #videoBackground
-    width: auto
-    height: 100vh
