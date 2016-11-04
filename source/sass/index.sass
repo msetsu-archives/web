@@ -1,5 +1,8 @@
 @import 'modules/member'
 
+$sp-width: 576px
+$pc: "(min-width: 576px)"
+
 body
   margin: 0
   padding: 0
@@ -57,32 +60,51 @@ $menu-height: 250px
     max-width: 640px
 
   // グローバルメニューはコンテナの下から配置
+  $menu-padding-pc: 100px
+  $menu-padding-mobile: 50px
+  $menu-item-height-pc: $menu-height - $menu-padding-pc
+  $menu-item-height-mobile: 25vw
+  
   .g-nav
     position: absolute
     bottom: 0
     width: 100%
-    height: $menu-height
+    padding-bottom: $menu-padding-mobile    
+    @media #{$pc}
+      height: $menu-height
+      padding-bottom: $menu-padding-pc
     background-color: white
   .g-nav-list
-    height: 150px
     background-color: #FF4736
+    overflow: hidden
+    height: $menu-item-height-mobile
+    @media #{$pc}
+      height: $menu-item-height-pc
   .g-nav-btn
     text-align: center
     border-left: 4px solid #FF0012
+    line-height: $menu-item-height-mobile
+    @media #{$pc}
+      line-height: $menu-item-height-pc
     &:last-child
       border-right: 4px solid #FF0012
+
+$large-font-size-mobile: 100vw / (1200 / 54)
 
 #companyCEO
   h2
     height: 120px
     line-height: 120px
-    font-size: 54px
+    font-size: $large-font-size-mobile
+    letter-spacing: 0.2em
+    @media #{$pc}
+      font-size: 54px   
+      letter-spacing: 0.5em 
     vertical-align: middle
     font-weight: normal
     color: white
     text-align: center
     margin: 0 auto
-    letter-spacing: 0.5em
   .img-ceo
     max-width: 100%
   .company-story
@@ -104,13 +126,16 @@ $menu-height: 250px
   h2
     height: 120px
     line-height: 120px
-    font-size: 54px
+    font-size: $large-font-size-mobile
+    letter-spacing: 0.2em
+    @media #{$pc}
+      font-size: 54px
+      letter-spacing: 0.5em    
     vertical-align: middle
     font-weight: normal
     color: white
     text-align: center
     margin: 0 auto
-    letter-spacing: 0.5em
   .mission-1, .mission-2
     line-height: 1.7em
 
@@ -118,13 +143,16 @@ $menu-height: 250px
   h2
     height: 120px
     line-height: 120px
-    font-size: 54px
+    font-size: $large-font-size-mobile
+    letter-spacing: 0.2em
+    @media #{$pc}
+      font-size: 54px    
+      letter-spacing: 0.5em
     vertical-align: middle
     font-weight: normal
     color: white
     text-align: center
     margin: 0 auto
-    letter-spacing: 0.5em
 
 #companyData
   padding-top: 40px
@@ -133,13 +161,16 @@ $menu-height: 250px
   h2
     height: 80px
     line-height: 80px
-    font-size: 54px
+    font-size: $large-font-size-mobile
+    letter-spacing: 0.2em
+    @media #{$pc}
+      font-size: 54px   
+      letter-spacing: 0.3em 
     vertical-align: middle
     font-weight: normal
     color: #f33
     text-align: center
     margin: 0 auto
-    letter-spacing: 0.3em
   .rbb
     margin: 0 auto
     width: 160px
@@ -168,4 +199,3 @@ $menu-height: 250px
   #videoBackground
     width: auto
     height: 100vh
-    
