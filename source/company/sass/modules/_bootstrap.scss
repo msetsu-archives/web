@@ -1,0 +1,13 @@
+
+$grid-gutter-width-base: 20px; // containerのpadding
+
+// colのpadding(gutter)
+$grid-gutter-widths: (
+  xs: 0,
+  sm: 0,
+  md: 30px,
+  lg: 30px,
+  xl: 30px
+);
+
+@import "bootstrap/scss/bootstrap"
