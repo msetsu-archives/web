@@ -11,4 +11,4 @@ gulp.task 'jade', ->
   .pipe rename((path) ->
     path.dirname = path.dirname.replace('jade', '')
   )
-  .pipe gulp.dest('public/')
+  .pipe gulp.dest('.build/')

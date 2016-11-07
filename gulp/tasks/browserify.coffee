@@ -21,7 +21,7 @@ gulp.task 'browserify', ->
   .on 'error', handleErrors
   .pipe rename('index.js')
   .pipe uglify(mangle: false)
-  .pipe gulp.dest('public/company/asset/js')
+  .pipe gulp.dest('.build/company/asset/js')
 
   gulp
   .src 'source/company/coffee/common.coffee', {read: false}
@@ -29,5 +29,5 @@ gulp.task 'browserify', ->
   .on 'error', handleErrors
   .pipe rename('common.js')
   .pipe uglify(mangle: false)
-  .pipe gulp.dest('public/company/asset/js')
+  .pipe gulp.dest('.build/company/asset/js')
 

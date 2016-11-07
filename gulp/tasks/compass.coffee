@@ -22,4 +22,4 @@ gulp.task 'compass', ->
   .pipe rename((path) ->
     path.dirname = path.dirname.replace('sass', 'asset/css')
   )
-  .pipe gulp.dest('public/')
+  .pipe gulp.dest('.build/')

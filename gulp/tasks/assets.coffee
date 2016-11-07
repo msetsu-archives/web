@@ -4,16 +4,19 @@ deferSource = require 'gulp-defer'
 runSequence = require 'run-sequence'
 
 # HTML, JS, CSSを生成して不要なCSSを削除
-gulp.task 'assets', ['assets:optimize-css', 'assets:defer-assets']
-
-gulp.task 'assets:optimize-css', ['jade', 'compass', 'browserify'], ->
+gulp.task 'assets', ['assets:css', 'assets:html'], ->
   gulp
-  .src ['public/**/*.css']
-  .pipe purify(['public/**/*.js', 'public/**/*.html'])
+  .src ['.build/**/*']
   .pipe gulp.dest('public/')
 
-gulp.task 'assets:defer-assets', ['assets:optimize-css'], ->
+gulp.task 'assets:css', ['jade', 'compass', 'browserify'], ->
+  gulp
+  .src ['.build/**/*.css']
+  .pipe purify(['.build/**/*.js', '.build/**/*.html'])
+  .pipe gulp.dest('.build/')
+
+gulp.task 'assets:html', ['assets:css'], ->
     gulp
-    .src ['public/**/*.html']
+    .src ['.build/**/*.html']
     .pipe deferSource()
-    .pipe gulp.dest('public/')
+    .pipe gulp.dest('.build/')
