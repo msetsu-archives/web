@@ -16,18 +16,18 @@ gulp.task 'browserify', ->
 
   # Single entry point to browserify
   gulp
-  .src 'source/coffee/index.coffee', {read: false}
+  .src 'source/company/coffee/index.coffee', {read: false}
   .pipe browserify(orderOptions)
   .on 'error', handleErrors
   .pipe rename('index.js')
   .pipe uglify(mangle: false)
-  .pipe gulp.dest('public/asset/company/')
+  .pipe gulp.dest('public/company/asset/js')
 
   gulp
-  .src 'source/coffee/common.coffee', {read: false}
+  .src 'source/company/coffee/common.coffee', {read: false}
   .pipe browserify(orderOptions)
   .on 'error', handleErrors
   .pipe rename('common.js')
   .pipe uglify(mangle: false)
-  .pipe gulp.dest('public/asset/')
+  .pipe gulp.dest('public/company/asset/js')
 

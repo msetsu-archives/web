@@ -2,7 +2,7 @@ $ ->
   # PCサイズ
   if parseInt(window.screen.availWidth, 10) > 576
     $('.video').append('''
-  <video id="videoBackground" autoplay="" loop="" poster="asset/image/bg.jpg" muted=""><source src="asset/image/bg.mp4" type="video/mp4"></video>
+  <video id="videoBackground" autoplay="" loop="" poster="/company/asset/image/bg.jpg" muted=""><source src="/company/asset/image/bg.mp4" type="video/mp4"></video>
 ''')
 
   blur = ->

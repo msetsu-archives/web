@@ -33,11 +33,13 @@ html(lang='ja')
     block viewport
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
     
-    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi", crossorigin="anonymous")
-    link(rel='stylesheet', href='asset/company/common.css')
+    link(inline rel='stylesheet', href='/company/asset/css/common.css')
 
     block pageCSS
-      link(rel='stylesheet', href='asset/company/index.css')
+      link(rel='stylesheet', href='/company/asset/css/index_first.css', inline)
+      |<!--defer-->
+      link(rel='stylesheet', href='/company/asset/css/index.css')
+      |<!--enddefer-->
 
     link(rel='https://api.w.org/', href='https://msetsu.com/wp-json/')
     link(rel='EditURI', type='application/rsd+xml', title='RSD', href='https://msetsu.com/xmlrpc.php?rsd')
@@ -77,7 +79,7 @@ html(lang='ja')
         include _footer
 
     //- JavaScripts
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7", crossorigin="anonymous")
+    script(async src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7", crossorigin="anonymous")
 
     block pageJS
-      script(src='asset/company/index.js')
+      script(async src='/company/asset/js/index.js')

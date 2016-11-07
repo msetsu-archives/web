@@ -12,7 +12,7 @@ isGzip = gutil.env.gzip?
 # 監視を行わないビルドタスク
 gulp.task 'build', ->
 
-  defaultBuildTask = ['image', 'jade', 'compass', 'browserify']
+  defaultBuildTask = ['image', 'assets', 'optimize']
 
   # 本番用
   if isProduction

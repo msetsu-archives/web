@@ -17,13 +17,13 @@ gulp.task 'connect', ->
 gulp.task 'liveReload', ->
 
   # publicの監視
-  gulp.watch 'public/*.*', ['reload']
+  gulp.watch 'public/**/*', ['reload']
 
 
 # LiveReload
 gulp.task 'reload', ->
 
   gulp
-  .src('public/*.html', {read: false})
+  .src('public/**/*.html', {read: false})
   .pipe(connect.reload())
 

@@ -5,10 +5,10 @@ gulp = require 'gulp'
 gulp.task 'watch', ->
 
   # Coffeeの監視
-  gulp.watch 'source/coffee/**', ['browserify']
+  gulp.watch 'source/**/coffee/**', ['browserify', 'optimize']
 
   # Jadeの監視
-  gulp.watch 'source/jade/**', ['jade']
+  gulp.watch 'source/**/jade/**', ['jade', 'optimize']
 
   # Sassの監視
-  gulp.watch 'source/sass/**', ['compass']
+  gulp.watch 'source/**/sass/**', ['compass', 'optimize']
