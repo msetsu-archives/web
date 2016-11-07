@@ -1,4 +1,5 @@
 @import 'modules/variables'
+@import 'modules/mixins'
 @import 'modules/video'
 
 body
@@ -87,18 +88,15 @@ $menu-height: 250px
 
 #companyCEO
   h2
-    height: 120px
-    line-height: 120px
-    font-size: $large-font-size-mobile
-    letter-spacing: 0.2em
-    @media #{$pc}
-      font-size: 54px   
-      letter-spacing: 0.5em 
+    @include header-h2($large-font-size, $large-font-size-mobile, 2.57)
     vertical-align: middle
     font-weight: normal
     color: white
     text-align: center
     margin: 0 auto
+    
+    border-bottom: 1.5em solid white
+    box-sizing: content-box
   .img-ceo
     max-width: 100%
   .company-story

@@ -19,15 +19,6 @@ table
 
 .pt-1em
   padding-top: 1em
-.pt-40
-  padding-top: 40px
-.pt-60
-  padding-top: 60px
-.pt-80
-  padding-top: 80px
-.pb-60
-  padding-bottom: 60px
-
 
 .bb-gray
   border-bottom: 2px solid #999
@@ -42,15 +33,16 @@ table
 .ls-5
   letter-spacing: 0.5em
 
-.mt-20
-  margin-top: 20px
-.mt-40
-  margin-top: 40px
-.mt-60
-  margin-top: 60px
-.mb-20
-  margin-bottom: 20px
-
+// Generate pt-10, pb-10, mt-10, mb-10 tags
+$base: 1px
+@each $prop, $abbrev in (margin: m, padding: p)
+  @each $size in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    .#{$abbrev}t-#{$size * 10}
+      #{$prop}-top: $base * $size * 10 !important
+    .#{$abbrev}b-#{$size * 10}
+      #{$prop}-bottom: $base * $size * 10 !important
+  
+// fs
 .fs-90
   font-size: 90%
 

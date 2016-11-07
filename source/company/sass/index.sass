@@ -1,59 +1,37 @@
 @import 'modules/variables'
+@import 'modules/mixins'
 @import 'modules/member'
+
+
+%h2
+  @include header-h2($large-font-size, $large-font-size-mobile, 2.57)
 
 #companyMission
   h2
-    height: 120px
-    line-height: 120px
-    font-size: $large-font-size-mobile
+    @extend %h2
     letter-spacing: 0.2em
     @media #{$pc}
-      font-size: 54px
-      letter-spacing: 0.5em    
-    vertical-align: middle
-    font-weight: normal
-    color: white
-    text-align: center
-    margin: 0 auto
+      letter-spacing: 0.2em
   .mission-1, .mission-2
     line-height: 1.7em
 
 #companyMember
   h2
-    height: 120px
-    line-height: 120px
-    font-size: $large-font-size-mobile
-    letter-spacing: 0.2em
-    @media #{$pc}
-      font-size: 54px    
-      letter-spacing: 0.5em
-    vertical-align: middle
-    font-weight: normal
-    color: white
-    text-align: center
-    margin: 0 auto
+    @extend %h2
 
 #companyData
   padding-top: 40px
   padding-bottom: 40px
   background-color: #e6e6ea
   h2
-    height: 80px
-    line-height: 80px
-    font-size: $large-font-size-mobile
-    letter-spacing: 0.2em
-    @media #{$pc}
-      font-size: 54px   
-      letter-spacing: 0.3em 
-    vertical-align: middle
-    font-weight: normal
+    @include header-h2($semi-large-font-size, 2rem, 1)
     color: #f33
-    text-align: center
-    margin: 0 auto
   .rbb
     margin: 0 auto
-    width: 160px
+    width: 4.5rem
     border-bottom: 2px solid #f33
+    @media #{$pc}
+      width: 9rem
   .icon-sns
     min-width: 100%
     &:hover

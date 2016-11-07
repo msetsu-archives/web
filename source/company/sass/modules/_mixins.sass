@@ -1,0 +1,26 @@
+
+@function mobileFontSize($font-size)
+    @return 100vw / stripUnits(1070px / $font-size)
+
+@function stripUnits($number)
+  @return $number / ($number * 0 + 1)
+
+@mixin header-h2($font-size, $font-size-mobile, $factor)
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: $font-size-mobile
+  height:  $font-size-mobile * $factor
+  line-height: $font-size-mobile * $factor
+  letter-spacing: 0.2em
+  vertical-align: middle
+  font-weight: normal
+  color: white
+  text-align: center
+  margin: 0 auto
+
+  @media #{$pc}
+    font-size: $font-size
+    line-height: $font-size * $factor
+    height: $font-size * $factor
+    letter-spacing: 0.5em
