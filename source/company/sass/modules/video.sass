@@ -1,0 +1,23 @@
+@import 'variables'
+
+.video
+  /*  動画を背景に設定するスタイルシート  */
+  position: fixed
+  top: 0
+  right: 0
+  z-index: -100
+  min-width: 100%
+  min-height: 100%
+  width: auto
+  height: 100vh
+  background-image: url(/company/asset/image/bg.jpg)
+  background-position: center
+  background-size: cover
+
+#videoBackground
+  width: auto
+  height: 100vh
+  @media (min-aspect-ratio: 16/9)
+    width: 100%
+    height: auto
+
