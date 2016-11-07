@@ -37,9 +37,6 @@ html(lang='ja')
 
     block pageCSS
       link(rel='stylesheet', href='/company/asset/css/index_first.css', inline)
-      |<!--defer-->
-      link(rel='stylesheet', href='/company/asset/css/index.css')
-      |<!--enddefer-->
 
     link(rel='https://api.w.org/', href='https://msetsu.com/wp-json/')
     link(rel='EditURI', type='application/rsd+xml', title='RSD', href='https://msetsu.com/xmlrpc.php?rsd')
@@ -81,5 +78,7 @@ html(lang='ja')
     //- JavaScripts
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7", crossorigin="anonymous")
 
+    block pageCSS2
+      link(rel='stylesheet', href='/company/asset/css/index.css')
     block pageJS
       script(async src='/company/asset/js/index.js')

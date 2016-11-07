@@ -6,20 +6,42 @@ block title
 block container
   #mainVisual
     h1
-      img#copyJapanese.copy.copy-jp(src="asset/image/1-1_copy-japanese.svg")
-      img#copyEnglish.copy.copy-en(src="asset/image/1-2_copy-english.svg")
+      picture
+        source(srcset="asset/image/1-1_copy-japanese_sp.svg", media="(max-width: 576px)")
+        source(srcset="asset/image/1-1_copy-japanese.svg", media="(min-width: 575px)")        
+        img#copyJapanese.copy.copy-jp(src="asset/image/1-1_copy-japanese.svg")
+      picture
+        source(srcset="asset/image/1-2_copy-english_sp.svg", media="(max-width: 576px)")
+        source(srcset="asset/image/1-2_copy-english.svg", media="(min-width: 575px)")        
+        img#copyEnglish.copy.copy-en(src="asset/image/1-2_copy-english.svg")
     nav#globalNav.g-nav
       .g-nav-list
         .container
           ul.row
             li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyCEO")
-              img.w-150.h-150(src="asset/image/icon_CEO.svg")
-            li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyMission")
-              img.w-150.h-150(src="asset/image/icon_mission.svg")
+              picture
+                source(srcset="asset/image/icon_CEO_sp.svg", media="(max-width: 576px)")
+                source(srcset="asset/image/icon_CEO.svg", media="(min-width: 575px)")        
+                img.w-150.h-150(src="asset/image/icon_CEO.svg")
+              //- img.w-150.h-150(src="asset/image/icon_CEO.svg")
+            li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyMission")            
+              picture
+                source(srcset="asset/image/icon_mission_sp.svg", media="(max-width: 576px)")
+                source(srcset="asset/image/icon_mission.svg", media="(min-width: 575px)")        
+                img.w-150.h-150(src="asset/image/icon_mission.svg")
+
             li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyMember")
-              img.w-150.h-150(src="asset/image/icon_member.svg")
+              picture
+                source(srcset="asset/image/icon_member_sp.svg", media="(max-width: 576px)")
+                source(srcset="asset/image/icon_member.svg", media="(min-width: 575px)")        
+                img.w-150.h-150(src="asset/image/icon_member.svg")
+
             li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyData")
-              img.w-150.h-150(src="asset/image/icon_kaisha-gaiyou.svg")
+              picture
+                source(srcset="asset/image/icon_kaisha-gaiyou_sp.svg", media="(max-width: 576px)")
+                source(srcset="asset/image/icon_kaisha-gaiyou.svg", media="(min-width: 575px)")        
+                img.w-150.h-150(src="asset/image/icon_kaisha-gaiyou.svg")
+
 
   #companyCEO
     h2 CEO挨拶
@@ -29,8 +51,12 @@ block container
           .col-xs-12.col-xl-12
             .col-xs-12.col-xl-6
               figure
-                img.img-fluid.w-100(src="asset/image/ceo-aisatsu.jpg" srcset="asset/image/ceo-aisatsu_2x.jpg 2x")
-                figcaption.caption-ceo.pt-1em
+                picture
+                  source(srcset="asset/image/ceo-aisatsu_sp.jpg", media="(max-width: 576px)")
+                  source(srcset="asset/image/ceo-aisatsu_2x.jpg 2x", media="(min-width: 575px)")        
+                  source(srcset="asset/image/ceo-aisatsu.jpg", media="(min-width: 575px)")        
+                  img.img-fluid.w-100(src="asset/image/ceo-aisatsu.jpg")
+                figcaption.caption-ceo.pt-1em.text-xl-left.text-xs-center
                   span.ls-2 代表取締役CEO
                   h3.ceo-name.ls-5
                     | 中安祐貴<br>
@@ -58,7 +84,10 @@ block container
         .row
           .col-xs-12.col-xl-12
             .mission-1.col-xs-12.col-xl-6
-              img(src="asset/image/3-1_mission&line.svg")
+              picture
+                source(srcset="asset/image/3-1_mission&line_sp.svg" media="(max-width: 576px)")
+                source(srcset="asset/image/3-1_mission&line.svg" media="(max-width: 575px)")
+                img(src="asset/image/3-1_mission&line.svg")
               h3.mt-20.mb-20 投資家へワクワクする投資機会の創出
               p.
                 「株式投資の極意とは、いい銘柄を見つけて、いいタイミングで買い、
@@ -69,7 +98,10 @@ block container
                 みんせつは、投資家にとって、中長期で期待を上回る収益性を目指した
                 「心から応援したい企業との出会い」を創出します。
             .mission-2.col-xs-12.col-xl-6
-              img(src="asset/image/3-2_mission&line.svg")
+              picture
+                source(srcset="asset/image/3-2_mission&line_sp.svg" media="(max-width: 576px)")
+                source(srcset="asset/image/3-2_mission&line.svg" media="(max-width: 575px)")
+                img(src="asset/image/3-2_mission&line.svg")
               h3.mt-20.mb-20 <span class="wr">企業へ新しく</span><span class="wr">投資される機会の創出</span>
               p.
                 持続的な企業価値創造は、企業と投資家による協創によって実現されます。

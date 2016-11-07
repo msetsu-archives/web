@@ -22,25 +22,38 @@ header
 // メインビジュアル
 // コピー部分とグローバルメニューのアイコンが1画面に表示されるくらいのサイズにする
 
-$copy-height: 25vh
-$copy-margin: 60px
-$copy-ja-margin: 25px
-
-// 画像のアス比
 $image-container-width: (300px + 22px * 2)
-$image-container-height: 81px + 50px + $copy-margin
-$image-container-aspect: $image-container-height / $image-container-width  
-$image-container-height: 100vw * #{$image-container-aspect}
 $menu-visible-height: 125px
 $menu-height: 250px
+$copy-ja-margin: 25px
 
 #mainVisual
   position: relative
   overflow: hidden
   margin-top: -1 * $header-height + $copy-ja-margin
-  padding-top: $copy-height // 画面の4/1程度から表示スタート
+
+  $copy-start-position: 15vh
+  $copy-margin: 44px
+  $image-container-height: 357px + 50px + $copy-margin
+  $image-container-aspect: $image-container-height / $image-container-width  
+  $image-container-height: 100vw * #{$image-container-aspect}
+  padding-top: $copy-start-position
   height: calc(100vh + #{$menu-visible-height})
-  min-height: calc(#{$copy-height} + #{$image-container-height} + #{$menu-height})
+  min-height: calc(#{$copy-start-position} + #{$image-container-height} + #{$menu-height})
+  .copy-en
+    margin-top: $copy-margin
+
+  @media #{$pc}
+    $copy-start-position: 25vh
+    $copy-margin: 60px
+    $image-container-height: 81px + 50px + $copy-margin
+    $image-container-aspect: $image-container-height / $image-container-width  
+    $image-container-height: 100vw * #{$image-container-aspect}
+    padding-top: $copy-start-position
+    height: calc(100vh + #{$menu-visible-height})
+    min-height: calc(#{$copy-start-position} + #{$image-container-height} + #{$menu-height})
+    .copy-en
+      margin-top: $copy-margin
   
   h1
     padding: 0 22px
@@ -53,7 +66,6 @@ $menu-height: 250px
   .copy-jp
     max-width: 980px
   .copy-en
-    margin-top: $copy-margin
     max-width: 640px
 
   // グローバルメニューはコンテナの下から配置
@@ -111,6 +123,3 @@ $menu-height: 250px
     padding-top: 20px
     padding-left: 5px
     padding-right: 5px
-    text-align: center
-    @media #{$pc}
-      text-align: left
