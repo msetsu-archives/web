@@ -1,6 +1,5 @@
 gulp = require 'gulp'
 sass = require 'gulp-sass'
-minifyCSS = require 'gulp-minify-css'
 handleErrors = require '../utils/handle_errors'
 rename = require 'gulp-rename'
 
@@ -15,10 +14,9 @@ gulp.task 'compass', ->
   gulp
   .src ['source/*/sass/**/*.sass']
   .pipe sass({
-    includePaths: ['./node_modules']
+    includePaths: ['./node_modules'],
   })
   .on 'error', handleErrors
-  .pipe minifyCSS()
   .pipe rename((path) ->
     path.dirname = path.dirname.replace('sass', 'asset/css')
   )

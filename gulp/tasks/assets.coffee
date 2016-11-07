@@ -12,7 +12,7 @@ gulp.task 'assets', ['assets:css', 'assets:html'], ->
 gulp.task 'assets:css', ['jade', 'compass', 'browserify'], ->
   gulp
   .src ['.build/**/*.css']
-  .pipe purify(['.build/**/*.js', '.build/**/*.html'])
+  .pipe purify(['.build/**/*.js', '.build/**/*.html'], { minify: true })
   .pipe gulp.dest('.build/')
 
 gulp.task 'assets:html', ['assets:css'], ->
