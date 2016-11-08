@@ -5,10 +5,17 @@
 @function stripUnits($number)
   @return $number / ($number * 0 + 1)
 
+@mixin header($font-size, $factor, $spacing)
+  font-size: $font-size
+  line-height: $font-size * $factor
+  height: $font-size * $factor
+  letter-spacing: $spacing
+
 // 画面サイズによって可変のヘッダーコンポーネントを作る
 // $font-size-small, $font-size-medium, $font-size-large: 各サイズでのフォントサイズ(指定しない場合は同じ値を繰り返して指定)
 // $factor: フォントサイズに対するボックスの高さの倍率
-@mixin dynamicSizeHeader($font-size-small: 1em, $font-size-medium: 1em, $font-size-large: 1em, $factor: 1)
+@mixin dynamicSizeHeader($font-size-small: 1em, $font-size-medium: 1em, $font-size-large: 1em, $factor: 1, $ls: 0.2em, $lsl: 0.4em)
+  // 太字を細く見せる
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale;
 
@@ -18,26 +25,17 @@
   text-align: center
   margin: 0 auto
   
-  @if $font-size-small == $font-size-medium && $font-size-medium == $font-size-large 
-      font-size: $font-size-small
-      line-height: $font-size-small * $factor
-      height: $font-size-small * $factor
-      letter-spacing: 0.2em
+  @if $font-size-small == $font-size-medium and $font-size-medium == $font-size-large
+    @include header($font-size-small, $factor, $ls)
   @else
-    @media #{$md}
-      font-size: $font-size-medium
-      line-height: $font-size-medium * $factor
-      height: $font-size-medium * $factor
-      letter-spacing: 0.2em
+  
     @if $font-size-small != $font-size-medium
       @media #{$sm}
-        font-size: $font-size-small
-        line-height: $font-size-small * $factor
-        height: $font-size-small * $factor
-        letter-spacing: 0.2em
+        @include header($font-size-small, $factor, $ls)
+
+    @media #{$md}
+      @include header($font-size-medium, $factor, $ls)
+
     @if $font-size-large != $font-size-medium
       @media #{$xl}
-        font-size: $font-size-large
-        line-height: $font-size-large * $factor
-        height: $font-size-large * $factor
-        letter-spacing: 0.4em
+        @include header($font-size-large, $factor, $lsl) 

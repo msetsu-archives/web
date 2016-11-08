@@ -6,9 +6,9 @@ $pad-width: 1069px
 // でかいサイズ用のMediaQuery(PC)
 $xl: "(min-width: #{$pad-width + 1px})"
 // 中サイズ用のMediaQuery(PC, Pad, スマホ横)
-$md: "(max-width: #{$pad-width})"
+$md: "(min-width: #{$sp-width + 1px})"
 // スマホ用ポートレート用のMediaQuery
-$sm: "(max-width: #{$sp-width})"
+$sm: "(min-width: 0)"
 
 $large-font-size: 70px
 $large-font-size-mobile: mobileFontSize($large-font-size)
