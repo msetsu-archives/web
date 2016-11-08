@@ -2,12 +2,14 @@
 @import 'modules/mixins'
 @import 'modules/member'
 
-
 #companyMission
   h2
     @include dynamicSizeHeader($large-font-size-mobile, 48px, $large-font-size, 2.57)
   .mission-1, .mission-2
     line-height: 1.7em
+  h3
+    line-height: 2.4rem
+    -webkit-font-smoothing: antialiased
 
 #companyMember
   h2
