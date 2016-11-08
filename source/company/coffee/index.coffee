@@ -1,9 +1,14 @@
 $ ->
   # PCサイズ
   if parseInt(window.screen.availWidth, 10) > 576
-    $('.video').append('''
-  <video id="videoBackground" autoplay="" loop="" poster="/company/asset/image/bg.jpg" muted=""><source src="/company/asset/image/bg.mp4" type="video/mp4"></video>
-''')
+    video = $('.video')
+    mp4 = video.attr('data-srcmp4')
+    poster = video.attr('data-srcimg')
+    $('.video').append("""
+  <video id="videoBackground" autoplay="" loop="" poster="#{poster}" muted="">
+    <source src="#{mp4}" type="video/mp4">
+  </video>
+""")
 
   blur = ->
     $('.person.active').removeClass 'active'

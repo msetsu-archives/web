@@ -5,5 +5,5 @@ clean = require 'gulp-clean'
 gulp.task 'clean', ->
 
   gulp
-  .src ['public', 'vendor_bower'], {read: false}
+  .src ['public', 'vendor_bower', 'dist'], {read: false}
   .pipe clean()
