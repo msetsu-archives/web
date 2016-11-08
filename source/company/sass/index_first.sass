@@ -32,9 +32,9 @@ $copy-ja-margin: 25px
   overflow: hidden
   margin-top: -1 * $header-height + $copy-ja-margin
 
-  $copy-start-position: 15vh
-  $copy-margin: 44px
-  $image-container-height: 357px + 50px + $copy-margin
+  $copy-start-position: 25vh
+  $copy-margin: 60px
+  $image-container-height: 81px + 50px + $copy-margin
   $image-container-aspect: $image-container-height / $image-container-width  
   $image-container-height: 100vw * #{$image-container-aspect}
   padding-top: $copy-start-position
@@ -43,10 +43,10 @@ $copy-ja-margin: 25px
   .copy-en
     margin-top: $copy-margin
 
-  @media #{$pc}
-    $copy-start-position: 25vh
-    $copy-margin: 60px
-    $image-container-height: 81px + 50px + $copy-margin
+  @media #{$sm}
+    $copy-start-position: 15vh
+    $copy-margin: 44px
+    $image-container-height: 357px + 50px + $copy-margin
     $image-container-aspect: $image-container-height / $image-container-width  
     $image-container-height: 100vw * #{$image-container-aspect}
     padding-top: $copy-start-position
@@ -58,6 +58,8 @@ $copy-ja-margin: 25px
   h1
     padding: 0 22px
     margin: 0
+    @media #{$sm}
+      padding: 0 44px
 
   .copy
     display: block
@@ -76,31 +78,32 @@ $copy-ja-margin: 25px
   
   .g-nav
     position: absolute
+    background-color: white
     bottom: 0
     width: 100%
-    padding-bottom: $menu-padding-mobile    
-    @media #{$pc}
-      height: $menu-height
-      padding-bottom: $menu-padding-pc
-    background-color: white
+    height: $menu-height
+    padding-bottom: $menu-padding-pc
+    @media #{$sm}
+      height: auto
+      padding-bottom: $menu-padding-mobile
   .g-nav-list
     background-color: #FF4736
     overflow: hidden
-    height: $menu-item-height-mobile
-    @media #{$pc}
-      height: $menu-item-height-pc
+    height: $menu-item-height-pc
+    @media #{$sm}
+      height: $menu-item-height-mobile
   .g-nav-btn
     text-align: center
     border-left: 4px solid #FF0012
-    line-height: $menu-item-height-mobile
-    @media #{$pc}
-      line-height: $menu-item-height-pc
+    line-height: $menu-item-height-pc
+    @media #{$sm}
+      line-height: $menu-item-height-mobile
     &:last-child
       border-right: 4px solid #FF0012
 
 #companyCEO
   h2
-    @include header-h2($large-font-size, $large-font-size-mobile, 2.57)
+    @include dynamicSizeHeader($large-font-size-mobile, $large-font-size, $large-font-size, 2.57)
     vertical-align: middle
     font-weight: normal
     color: white

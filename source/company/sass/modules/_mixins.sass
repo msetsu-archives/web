@@ -5,22 +5,39 @@
 @function stripUnits($number)
   @return $number / ($number * 0 + 1)
 
-@mixin header-h2($font-size, $font-size-mobile, $factor)
+// 画面サイズによって可変のヘッダーコンポーネントを作る
+// $font-size-small, $font-size-medium, $font-size-large: 各サイズでのフォントサイズ(指定しない場合は同じ値を繰り返して指定)
+// $factor: フォントサイズに対するボックスの高さの倍率
+@mixin dynamicSizeHeader($font-size-small: 1em, $font-size-medium: 1em, $font-size-large: 1em, $factor: 1)
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: $font-size-mobile
-  height:  $font-size-mobile * $factor
-  line-height: $font-size-mobile * $factor
-  letter-spacing: 0.2em
   vertical-align: middle
   font-weight: normal
   color: white
   text-align: center
   margin: 0 auto
-
-  @media #{$pc}
-    font-size: $font-size
-    line-height: $font-size * $factor
-    height: $font-size * $factor
-    letter-spacing: 0.5em
+  
+  @if $font-size-small == $font-size-medium && $font-size-medium == $font-size-large 
+      font-size: $font-size-small
+      line-height: $font-size-small * $factor
+      height: $font-size-small * $factor
+      letter-spacing: 0.2em
+  @else
+    @media #{$md}
+      font-size: $font-size-medium
+      line-height: $font-size-medium * $factor
+      height: $font-size-medium * $factor
+      letter-spacing: 0.2em
+    @if $font-size-small != $font-size-medium
+      @media #{$sm}
+        font-size: $font-size-small
+        line-height: $font-size-small * $factor
+        height: $font-size-small * $factor
+        letter-spacing: 0.2em
+    @if $font-size-large != $font-size-medium
+      @media #{$xl}
+        font-size: $font-size-large
+        line-height: $font-size-large * $factor
+        height: $font-size-large * $factor
+        letter-spacing: 0.4em

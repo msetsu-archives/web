@@ -3,35 +3,29 @@
 @import 'modules/member'
 
 
-%h2
-  @include header-h2($large-font-size, $large-font-size-mobile, 2.57)
-
 #companyMission
   h2
-    @extend %h2
-    letter-spacing: 0.2em
-    @media #{$pc}
-      letter-spacing: 0.2em
+    @include dynamicSizeHeader($large-font-size-mobile, 48px, $large-font-size, 2.57)
   .mission-1, .mission-2
     line-height: 1.7em
 
 #companyMember
   h2
-    @extend %h2
+    @include dynamicSizeHeader($large-font-size-mobile, $large-font-size, $large-font-size, 2.57)
 
 #companyData
   padding-top: 40px
   padding-bottom: 40px
   background-color: #e6e6ea
   h2
-    @include header-h2($semi-large-font-size, 2rem, 1)
+    @include dynamicSizeHeader(2rem, 2rem, $semi-large-font-size, 1)
     color: #f33
   .rbb
     margin: 0 auto
-    width: 4.5rem
+    width: 9rem
     border-bottom: 2px solid #f33
-    @media #{$pc}
-      width: 9rem
+    @media #{$sm}
+      width: 4.5rem
   .icon
     display: inline-block
     width: 20%
@@ -50,9 +44,9 @@
     white-space: nowrap
     width: 5em
   table
-    font-size: 0.8rem
-    line-height: 2.5em
-
-    @media #{$pc}
-      font-size: 1rem
-      line-height: 3em
+    font-size: 1rem
+    line-height: 3em
+    
+    @media #{$sm}
+      font-size: 0.8rem
+      line-height: 2.5em    
