@@ -5,10 +5,21 @@ $ ->
     mp4 = video.attr('data-srcmp4')
     poster = video.attr('data-srcimg')
     $('.video').append("""
-  <video id="videoBackground" autoplay="" loop="" poster="#{poster}" muted="">
-    <source src="#{mp4}" type="video/mp4">
-  </video>
-""")
+      <video id="videoBackground" autoplay="" loop="" poster="#{poster}" muted="">
+        <source src="#{mp4}" type="video/mp4">
+      </video>
+    """)
+
+  # Member
+  $('#pos1').enllax()
+#  $('#pos2').enllax()
+#  $('#pos3').enllax()
+#  $('#pos4').enllax()
+#  $('#pos5').enllax()
+#  $('#pos6').enllax()
+#  $('#pos7').enllax()
+#  $('#pos8').enllax()
+
 
   blur = ->
     $('.person.active').removeClass 'active'
