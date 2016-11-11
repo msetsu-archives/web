@@ -9,7 +9,7 @@ gulp.task 'assets', ['assets:css', 'assets:html'], ->
   .src ['.build/**/*']
   .pipe gulp.dest('public/')
 
-gulp.task 'assets:css', ['jade', 'compass', 'browserify'], ->
+gulp.task 'assets:css', ['jade', 'compass', 'library_js', 'browserify'], ->
   gulp
   .src ['.build/**/*.css']
   .pipe purify(['.build/**/*.js', '.build/**/*.html'], { minify: true })
