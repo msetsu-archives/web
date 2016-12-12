@@ -47,8 +47,18 @@ $ ->
   itzzoom = ->
     $('.itz-zoom').map ->
       factor = $(this).width() / 1070
-      itzzoom_content ||= $(this).find('.itz-zoom-content') 
+      itzzoom_content ||= $(this).find('.itz-zoom-content')
       itzzoom_content.css 'zoom', factor
 
   $(window).on 'resize', itzzoom
   itzzoom()
+
+  animHeight = ($elm) ->
+
+
+  $('.more-btn').on 'click', (e) ->
+    e.preventDefault()
+    target = $(this).attr 'href'
+    $(target).slideDown()
+    $(this).parent().css
+      display: 'none'

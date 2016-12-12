@@ -10,11 +10,11 @@ block container
     h1
       picture
         source(srcset="/company/asset/image/1-1_copy-japanese_sp.svg", media="(max-width: 576px)")
-        source(srcset="/company/asset/image/1-1_copy-japanese.svg", media="(min-width: 577px)")        
+        source(srcset="/company/asset/image/1-1_copy-japanese.svg", media="(min-width: 577px)")
         img#copyJapanese.copy.copy-jp(src="/company/asset/image/1-1_copy-japanese.svg")
       picture
         source(srcset="/company/asset/image/1-2_copy-english_sp.svg", media="(max-width: 576px)")
-        source(srcset="/company/asset/image/1-2_copy-english.svg", media="(min-width: 577px)")        
+        source(srcset="/company/asset/image/1-2_copy-english.svg", media="(min-width: 577px)")
         img#copyEnglish.copy.copy-en(src="/company/asset/image/1-2_copy-english.svg")
     nav#globalNav.g-nav
       .g-nav-list
@@ -23,25 +23,25 @@ block container
             li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyCEO")
               picture
                 source(srcset="/company/asset/image/icon_CEO_sp.svg", media="(max-width: 576px)")
-                source(srcset="/company/asset/image/icon_CEO.svg", media="(min-width: 577px)")        
+                source(srcset="/company/asset/image/icon_CEO.svg", media="(min-width: 577px)")
                 img.w-150.h-150(src="/company/asset/image/icon_CEO.svg")
               //- img.w-150.h-150(src="/company/asset/image/icon_CEO.svg")
-            li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyMission")            
+            li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyMission")
               picture
                 source(srcset="/company/asset/image/icon_mission_sp.svg", media="(max-width: 576px)")
-                source(srcset="/company/asset/image/icon_mission.svg", media="(min-width: 577px)")        
+                source(srcset="/company/asset/image/icon_mission.svg", media="(min-width: 577px)")
                 img.w-150.h-150(src="/company/asset/image/icon_mission.svg")
 
             li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyMember")
               picture
                 source(srcset="/company/asset/image/icon_member_sp.svg", media="(max-width: 576px)")
-                source(srcset="/company/asset/image/icon_member.svg", media="(min-width: 577px)")        
+                source(srcset="/company/asset/image/icon_member.svg", media="(min-width: 577px)")
                 img.w-150.h-150(src="/company/asset/image/icon_member.svg")
 
             li.g-nav-btn.col-xs-3.col-xl-3: a.hv(href="#companyData")
               picture
                 source(srcset="/company/asset/image/icon_kaisha-gaiyou_sp.svg", media="(max-width: 576px)")
-                source(srcset="/company/asset/image/icon_kaisha-gaiyou.svg", media="(min-width: 577px)")        
+                source(srcset="/company/asset/image/icon_kaisha-gaiyou.svg", media="(min-width: 577px)")
                 img.w-150.h-150(src="/company/asset/image/icon_kaisha-gaiyou.svg")
 
 
@@ -55,15 +55,15 @@ block container
               figure
                 picture
                   source(srcset="/company/asset/image/ceo-aisatsu_sp.jpg", media="(max-width: 767px)")
-                  source(srcset="/company/asset/image/ceo-aisatsu_2x.jpg 2x", media="(min-width: 768px)")        
-                  source(srcset="/company/asset/image/ceo-aisatsu.jpg", media="(min-width: 768px)")        
+                  source(srcset="/company/asset/image/ceo-aisatsu_2x.jpg 2x", media="(min-width: 768px)")
+                  source(srcset="/company/asset/image/ceo-aisatsu.jpg", media="(min-width: 768px)")
                   img.img-fluid.w-100(src="/company/asset/image/ceo-aisatsu.jpg")
                 figcaption.caption-ceo.pt-1em.text-md-left.text-xs-center
                   span.ls-2 代表取締役CEO
                   h3.ceo-name.ls-5
                     | 中安祐貴<br>
                     small.ceo-name-english.ls-1 Yuki Nakayasu
-            
+
             .col-xs-12.col-md-6.float-xs-right.company-story
               p 私は2006年から10年間、証券会社のインターネット・中小型担当アナリストとして多くの企業を調査・分析してきました。
               p その中で、みんせつを創業するに至った大きな転機がアナリスト9年目に訪れました。インフォマートをはじめてカバレッジした時のことです。
@@ -117,13 +117,13 @@ block container
     h2 メンバー
     .bg-white.pt-60.pb-60
       .container.itz-zoom
-        ul.people.itz-zoom-content
+        ul.member-list.people.itz-zoom-content
           li#pos1.person(data-enllax-ratio=".2", data-enllax-type="foreground")
             a.people-anchor(href='#pos1') 濱本富士子
             img.front(src='/company/asset/image/161029_B_0367_kiri.png')
             img.back(src='/company/asset/image/161029_B_0367_kiri_bw.png')
             .detail.right-pane
-              h1 濱本富士子              
+              h1 濱本富士子
               .prof デザイナー
               p.prof-small.
                 多摩美術大学卒業後、株式会社Beachにデザイナーとして加わる。月刊誌のエディトリアルデザインや
@@ -254,5 +254,123 @@ block container
                 テーマにしたBtoBtoCサービスの設計・開発に従事。この間もiOS, Android, PHP, Ruby, Rails, AWS, Go, API設計など
                 時代に合わせた技術を着々と吸収しフルスタックエンジニアとして輝きを増す。
                 台北でも一緒に住んでいたCTOの塚田に口説かれて株式会社みんせつにJoin!
+        ul.sp-member-list.visible-xs.visible-sm
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_nakayasu.jpg')
+            .text-holder
+              h1 中安祐貴
+              .prof
+                p
+                  | 代表取締役 CEO。京都大学大学院工学研究科修士卒業。UBS証券、クレディ・スイス証券の株式調査部にて、
+                  | アナリストとしてインターネットや中小型・ITサービス・ゲーム等のセクターを調査。
+                p#nakayasuHiroki.accordion
+                  | 産業分析・個別企業の財務分析と同時に、国内外の機関投資家に株式投資の判断材料を提供。
+                  | 2015年Institutional Investor誌アナリストランキング5位（Internet部門）。
+                  | 従来の証券アナリストの枠を超えて幅広く投資家と企業のリレーションシップを構築し、資本市場に貢献するため、
+                  | 2015年6月に株式会社みんせつを創業。
+              .more-btn-holder
+                a.more-btn(href="#nakayasuHiroki") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_tamaoka.jpg')
+            .text-holder
+              h1 玉岡 剛
+              .prof
+                p
+                  | 取締役 CFO。京都大学大学院人間・環境学研究科博士課程在学中に独立系シンクタンクの設立に参画し、
+                  | その後プライベート・エクイティ・ファームを設立。主にハンズオン型のエクイティ投資が得意。
+                p#tamaokaTsuyoshi.accordion
+                  | 現在も複数の企業再生に携わり企業価値向上に寄与。
+                  | 代表の中安の熱すぎるビジョンに共感し、2015年6月株式会社みんせつを共同創業。
+              .more-btn-holder
+                a.more-btn(href="#tamaokaTsuyoshi") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_tsukada.jpg')
+            .text-holder
+              h1 塚田翔也
+              .prof
+                p
+                  | 取締役 CTO。大手SIer、フリーランス、2008年下期未踏、勉強会コミュニティ活動、特に名古屋でAndroid勉強会を運営し、
+                  | 雑誌寄稿、Android開発者向けの書籍を計3冊執筆するなど幅広く活動。
+                p#tsukadaSyouya.accordion
+                  | 2010年に入社した株式会社エイチームでは、生活系アプリの新規事業の立ち上げに従事し、シリーズ累計1,000万ダウンロードを達成。
+                  | また、同社のマザーズ上場・史上最速（当時）での東証一部への鞍替えに当たり、チーム体制構築や組織マネジメント等にも携わる。
+                  | 最近では1年間、台北でAR系スタートアップのCTOとして従事。帰国後、代表の中安のビジョンに心打たれ、株式会社みんせつに参画。
+              .more-btn-holder
+                a.more-btn(href="#tsukadaSyouya") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_miyashita.jpg')
+            .text-holder
+              h1 宮下 修
+              .prof
+                p
+                  | アナリスト担当顧問。早稲田大学政治経済学部卒業。英Cass Business SchoolファイナンスMBA、独コンスタンツ大学経済統計学部修士。
+                p#miyashitaOsamu.accordion
+                  | CFA協会認定証券アナリスト。野村総合研究所、スターンスチュワート、メリルリンチ日本証券、AIGグループにて、
+                  | 資本市場規制、コーポレート・ガバナンス調査、EVA経営システム導入、投資銀行業務、IRアドバイス、
+                  | リスクマネジメント商品開発営業等に従事。
+                  | 2009年にIRコンサルティング会社ジェイ・フェニックス・リサーチ株式会社の代表取締役に就任。
+                  | 2016年9月より株式会社みんせつIR顧問に就任。
+              .more-btn-holder
+                a.more-btn(href="#miyashitaOsamu") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_ishii.jpg')
+            .text-holder
+              h1 石井弘之
+              .prof
+                p
+                  | マーケティング担当顧問。横浜市立大学文理学部国際関係学科卒業。野村證券、メリルリンチ日本証券、クレディ・スイス証券にて、
+                  | エクイティ関連業務とIRアドバイザリー業務に従事。
+                p#ishiJiroyuki.accordion
+                  | 多くの上場企業IR業務の立ち上げと発展に貢献。2008年に独立系ESGリサーチ会社ECPI社（本社ミラノ）の
+                  | 日本代表としてESG格付の国内導入に尽力。2015年に株式会社オプトベンチャーズ取締役としてオプトグループ１号
+                  | となるベンチャーファンドの組成に携わる。2016年9月より株式会社みんせつIR顧問に就任。
+              .more-btn-holder
+                a.more-btn(href="#ishiJiroyuki") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_katsuma.jpg')
+            .text-holder
+              h1 伊藤功馬
+              .prof
+                p
+                  | エンジニア。名古屋市立大学経済学部卒業。大学在学中からWeb開発会社にて経験を積みながら、友人と写真共有アプリのスタートアップをする。
+                  | この時にフロントエンド・サーバサイド・インフラ・ネイティブアプリの全てを担当し、フルスタックエンジニアになる。
+                p#itoKoma.accordion
+                  | 大学卒業後は、より経験を積むためそのまま入社し、多数の受託開発、自社サービスの地域情報アプリ、AR（拡張現実）を
+                  | テーマにしたBtoBtoCサービスの設計・開発に従事。この間もiOS, Android, PHP, Ruby, Rails, AWS, Go, API設計など
+                  | 時代に合わせた技術を着々と吸収しフルスタックエンジニアとして輝きを増す。
+                  | 台北でも一緒に住んでいたCTOの塚田に口説かれて株式会社みんせつにJoin!
+              .more-btn-holder
+                a.more-btn(href="#itoKoma") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_hamana.jpg')
+            .text-holder
+              h1 浜名信次
+              .prof
+                p
+                  | アートディレクター。大阪芸術大学卒業後、東京のデザイン事務所を経て、2011年に株式会社Beach設立。グラフィックデザインをはじめ、WEBやアプリのデザイン、モーショングラフィックスの映像演出など、幅広く活動。
+                p#hamanaShinji.accordion
+                  | 株式会社みんせつへは創業当初からアートディレクターとして参画。
+              .more-btn-holder
+                a.more-btn(href="#hamanaShinji") もっと読む
+          li.sp-member-item.clearfix
+            .img-holder
+              img.front(src='/company/asset/image/sp/image_hamamoto.jpg')
+            .text-holder
+              h1 濱本富士子
+              .prof
+                p
+                  | デザイナー。多摩美術大学卒業後、株式会社Beachにデザイナーとして加わる。月刊誌のエディトリアルデザインや企業のプロモーションムービーなどを担当。
+                p#hamamotoHujiko.accordion
+                  | 株式会社みんせつではデザインとモーションデザインを担当。
+              .more-btn-holder
+                a.more-btn(href="#hamamotoHujiko") もっと読む
+
 
   .video(data-srcmp4="/company/asset/image/bg.mp4", data-srcimg="/company/asset/image/bg.jpg")

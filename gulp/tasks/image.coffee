@@ -4,7 +4,7 @@ rename = require 'gulp-rename'
 
 gulp.task 'image', ->
   gulp
-  .src 'source/*/image/**'
+  .src 'source/*/image/**/*'
   .pipe rename((path) ->
     path.dirname = path.dirname.replace('image', 'asset/image')
   )
