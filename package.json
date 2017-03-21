@@ -8,7 +8,7 @@
   },
   "author": "Minsetsu",
   "devDependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
+    "bootstrap": "4.0.0-alpha.5",
     "coffee-script": "^1.11.1",
     "coffeeify": "^2.0.1",
     "compass-mixins": "^0.12.10",
