@@ -12,7 +12,7 @@ gulp.task 'compass', ->
     import_path: 'source/sass/modules'
 
   gulp
-  .src ['source/*/sass/**/*.sass']
+  .src ['source/*/sass/**/*.scss']
   .pipe sass({
     includePaths: ['./node_modules'],
   })
