@@ -1,0 +1,70 @@
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/member';
+#companyMission {
+    h2 {
+        @include dynamicSizeHeader($large-font-size-mobile, 48px, $large-font-size, 2.57, 0.1em, 0.2em);
+    }
+    .mission-1,
+    .mission-2 {
+        line-height: 1.7em;
+    }
+    h3 {
+        line-height: 2.4rem;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+#companyMember {
+    h2 {
+        @include dynamicSizeHeader($large-font-size-mobile, $large-font-size, $large-font-size, 2.57);
+    }
+}
+
+#companyData {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #e6e6ea;
+    h2 {
+        @include dynamicSizeHeader(2rem, 2rem, $semi-large-font-size, 1);
+        color: #f33;
+    }
+    .rbb {
+        margin: 0 auto;
+        width: 4.5rem;
+        border-bottom: 2px solid #f33;
+        @media #{$md} {
+            width: 9rem;
+        }
+    }
+    .icon {
+        display: inline-block;
+        width: 20%;
+        max-width: 88px;
+        &+.icon {
+            margin-left: 1rem;
+        }
+    }
+    .icon-sns {
+        min-width: 100%;
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+    .map {
+        max-width: 100%;
+    }
+    .ti {
+        white-space: nowrap;
+        width: 5em;
+    }
+    table {
+        font-size: 0.8rem;
+        line-height: 2.5em;
+        @media #{$md} {
+            font-size: 1rem;
+            line-height: 3em;
+        }
+    }
+}

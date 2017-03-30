@@ -1,0 +1,141 @@
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/video';
+body {
+    margin: 0;
+    padding: 0;
+    background: #333;
+}
+
+.bg-white {
+    background: white;
+}
+
+// ヘッダー
+$header-height: 50px;
+header {
+    margin: 0;
+    padding: 0;
+    height: $header-height;
+    background-color: #e6e6ea;
+}
+
+// メインビジュアル
+// コピー部分とグローバルメニューのアイコンが1画面に表示されるくらいのサイズにする
+$image-container-width: (300px + 22px * 2);
+$menu-visible-height: 125px;
+$menu-height: 250px;
+$copy-ja-margin: 25px;
+#mainVisual {
+    position: relative;
+    overflow: hidden;
+    margin-top: -1 * $header-height + $copy-ja-margin;
+    $copy-start-position: 15vh;
+    $copy-margin: 44px;
+    $image-container-height: 357px + 50px + $copy-margin;
+    $image-container-aspect: $image-container-height / $image-container-width;
+    $image-container-height: 100vw * #{$image-container-aspect};
+    padding-top: $copy-start-position;
+    height: calc(100vh + #{$menu-visible-height});
+    min-height: calc(#{$copy-start-position} + #{$image-container-height} + #{$menu-height});
+    .copy-en {
+        margin-top: $copy-margin;
+    }
+    @media #{$md} {
+        $copy-start-position: 25vh;
+        $copy-margin: 60px;
+        $image-container-height: 81px + 50px + $copy-margin;
+        $image-container-aspect: $image-container-height / $image-container-width;
+        $image-container-height: 100vw * #{$image-container-aspect};
+        padding-top: $copy-start-position;
+        height: calc(100vh + #{$menu-visible-height});
+        min-height: calc(#{$copy-start-position} + #{$image-container-height} + #{$menu-height});
+        .copy-en {
+            margin-top: $copy-margin;
+        }
+    }
+    h1 {
+        padding: 0 44px;
+        margin: 0;
+        @media #{$md} {
+            padding: 0 22px;
+        }
+    }
+    .copy {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .copy-jp {
+        max-width: 980px;
+    }
+    .copy-en {
+        max-width: 640px;
+    }
+    $menu-padding-pc: 100px;
+    $menu-padding-mobile: 50px;
+    $menu-item-height-pc: $menu-height - $menu-padding-pc;
+    $menu-item-height-mobile: 25vw;
+    .g-nav {
+        position: absolute;
+        background-color: white;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        padding-bottom: $menu-padding-mobile;
+        @media #{$md} {
+            height: $menu-height;
+            padding-bottom: $menu-padding-pc;
+        }
+    }
+    .g-nav-list {
+        background-color: #FF4736;
+        overflow: hidden;
+        height: $menu-item-height-mobile;
+        @media #{$md} {
+            height: $menu-item-height-pc;
+        }
+    }
+    .g-nav-btn {
+        text-align: center;
+        border-left: 4px solid #FF0012;
+        line-height: $menu-item-height-mobile;
+        @media #{$md} {
+            line-height: $menu-item-height-pc;
+        }
+        &:last-child {
+            border-right: 4px solid #FF0012;
+        }
+    }
+}
+
+#companyCEO {
+    h2 {
+        @include dynamicSizeHeader($large-font-size-mobile, $large-font-size, $large-font-size, 2.57);
+        vertical-align: middle;
+        font-weight: normal;
+        color: white;
+        text-align: center;
+        margin: 0 auto;
+        border-bottom: 1.5em solid white;
+        box-sizing: content-box;
+    }
+    .company-story {
+        line-height: 1.65em;
+    }
+    .ceo-name {
+        padding: 10px 0;
+    }
+    .ceo-name-english {
+        font-size: 50%;
+    }
+    .ceo-profile {
+        font-size: 90%;
+        line-height: 1.7em;
+    }
+    .caption-ceo {
+        padding-top: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
