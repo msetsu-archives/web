@@ -1,27 +1,22 @@
-web
----------
+## web
 
-https://msetsu.com
+https://msetsu.com/company/
 
 みんせつウェブサイト
 
+## develop
 
-develop
-----------
-
-    $ npm install
+    $ yarn
     $ gulp server
     # => http://localhost:8080
 
-deploy
-------------
+## deploy
 
     $ gulp clean
     $ gulp build
     $ gulp dist
     $ sync.sh --profile <AWS Profile>
 
-deploy: invalidate CloudFront cache
--------------------------------------
+## deploy: invalidate CloudFront cache
 
     $ ./invalidate.sh --profile <AWS Profile>
