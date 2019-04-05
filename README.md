@@ -7,15 +7,14 @@ https://msetsu.com/company/
 ## develop
 
     $ yarn
-    $ gulp server
+    $ yarn gulp server
     # => http://localhost:8080
 
 ## deploy
 
-    $ gulp clean
-    $ gulp build
-    $ gulp dist
-    $ sync.sh --profile <AWS Profile>
+    $ yarn gulp build
+    $ yarn gulp dist
+    $ ./sync.sh --profile <AWS Profile>
 
 ## deploy: invalidate CloudFront cache
 
